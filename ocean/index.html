@@ -54,29 +54,30 @@
         <section class="resume-section p-3 p-lg-5 d-flex flex-column">      
           <div class="my-auto">  
 
-            <h2 class="mb-5">Save the Ocean</h2>  
+            <h2 class="mb-0">Save the Ocean</h2>  
+            <h3 class="mb-5"><span class="text-primary">Interative game</span></h3>
 
             <div id="sketchHolder" class="mb-5">
             </div>  
 
             <h3 class="mb-0">Objective</h3>
-            <div class="mb-5">Covering more than 70 percent of our planet, oceans are among the earth's most valuable natural resources. Yet, they are threatened by the large amounts of litter that enter the ocean every day. "Save Our Ocean" is an interactive game designed to raise awareness of the marine pollution.</div>
+            <div class="mb-5">Covering more than 70 percent of our planet, oceans are among the earth's most valuable natural resources. Yet, they are threatened by the large amounts of litter that enter the ocean every day. "Save Our Ocean" is an <span class="text-primary">interactive game designed to raise awareness of the marine pollution</span>.</div>
 
 
             <h3 class="mb-0">Game Logic</h3>
-            <div class="mb-5">Inspired by the classic Gold Miner game, this game consists of four modes: 'start', 'play', and two 'end' modes depending on the users' performance. The 'start' mode displays an image of a polluted ocean and a button. Hovering over the button will display an image of a clean ocean, and clicking on it will trigger the game by switching to a 'play' mode. The 'play' mode will display some of the most common types of garbage found in the ocean, such as plastic bottles, plastic utensils, beverage cans, and cigaretts, and a number of fish moving across the screen. There will be a rotating hook on top of the screen to collect the garbages. The goal of the game is to save the polluted ocean by collecting all the trash within the time limit of one minute. Pressing the space key will trigger the hook to extend in the chosen direction. The users will have to use their precision and time their execution. There will be a score board on top of the screen to keep track of the users' performance. There are two 'end' modes depending on the users' performance. Failing to collect all the ten garbages within the time limit will end the game and display a 'lose' mode, which displays an ocean covered by the garbages. Successfully collecting all the garbages will display a 'win' mode, which displays a clean ocean and a fish congratulating the users.</div>
+            <div class="mb-5">Inspired by the classic Gold Miner game, this game consists of <span class="text-primary">four modes: 'start', 'play', and two 'end' modes</span> depending on the users' performance. The 'start' mode displays an image of a polluted ocean and a button. Hovering over the button will display an image of a clean ocean, and clicking on it will trigger the game by switching to a 'play' mode. The 'play' mode will display some of the most common types of garbage found in the ocean, such as plastic bottles, plastic utensils, beverage cans, and cigaretts, and a number of fish moving across the screen. There will be a rotating hook on top of the screen to collect the garbages. The goal of the game is to <span class="text-primary">save the polluted ocean by collecting all the trash</span> within the time limit of one minute. Pressing the <span class="text-primary">space key</span> will trigger the hook to extend in the chosen direction. The users will have to use their precision and time their execution. There will be a score board on top of the screen to keep track of the users' performance. There are two 'end' modes depending on the users' performance. Failing to collect all the ten garbages within the time limit will end the game and display a 'lose' mode, which displays an ocean covered by the garbages. Successfully collecting all the garbages will display a 'win' mode, which displays a clean ocean and a fish congratulating the users.</div>
 
 
             <h3 class="mb-3">Process</h3>
             
             <div class="subheading mb-0">1. Rotating Hook</div>
-            <div class="mb-3">The first part of the project was to create a rotating hook. Since I have never used transformer.js before, I had to spend a considerable amount of time understanding the logic and manipulating it to fit what we wanted in our project. After successfully making the hook to swing back and forth, I then worked on making it extend and retract.</div>
+            <div class="mb-3">The first part of the project was to create a rotating hook. Since I have never used transformer.js before, I had to spend a considerable amount of time <span class="text-primary">understanding the logic of transformer.js</span> and manipulating it to fit what we wanted in our project. After successfully making the hook to swing back and forth, I then worked on making it extend and retract.</div>
             
             <div class="subheading mb-0">2. Collision System</div>
-            <div class="mb-3">The next major part of the project was to work on the collision system that detects hook-fish, hook-trash, hook-ground collisions. I realized that because the images all had different widths and height, it was particularly difficult to calculate collisions. Hence, I had to resize all the images to have the same width and height. Then, I worked on the dragging motion of the garbages that occurs after the hook successfully collects them.</div>   
+            <div class="mb-3">The next major part of the project was to work on the <span class="text-primary">collision system that detects hook-fish, hook-trash, hook-ground collisions</span>. I realized that because the images all had different widths and height, it was particularly difficult to calculate collisions. Hence, I had to resize all the images to have the same width and height. Then, I worked on the dragging motion of the garbages that occurs after the hook successfully collects them.</div>   
             
             <div class="subheading mb-0">3. Delivering the Message</div>
-            <div class="mb-3"> After creating the 'play' mode, I moved on to the 'start' mode where I wanted to deliver the core message of the game - saving our ocean. By using the image that shows a polluted ocean on the left side and a clean ocean on the right side, I covered the right side of the image with a black rectangle which will only disappear when the user hovers over the button. This way, I thought I could create a drama creating the 'end' modes. 
+            <div class="mb-3"> After creating the 'play' mode, I moved on to the 'start' mode where I wanted to <span class="text-primary">deliver the core message of the game - saving our ocean</span>. By using the image that shows a polluted ocean on the left side and a clean ocean on the right side, I covered the right side of the image with a black rectangle which will only disappear when the user hovers over the button. This way, I thought I could create a drama creating the 'end' modes. 
             </div>
 
             <div class="subheading mb-0">4. Scoring System</div>
