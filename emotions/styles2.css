@@ -1,0 +1,91 @@
+body {
+	width: 80%;
+	margin: auto;
+}
+
+svg.features {
+	position: absolute;
+}
+
+svg#leftBrow {
+	left: 50px;
+	top: 100px;
+	animation: leftBrowMove 5s linear forwards;
+}
+
+svg#rightBrow {
+	top: 100px;
+	left: 450px;
+	animation: rightBrowMove 5s linear forwards;
+}
+
+svg#leftEye {
+	top: 220px;
+	left: 80px;
+	animation: leftEyeMove 5s linear forwards;
+}
+
+svg#rightEye {
+	top: 220px;
+	left: 430px;
+	animation: rightEyeMove 5s linear forwards;
+	/*filter: drop-shadow(10px 0px 10px red);*/
+}
+
+#ocean {
+	position:absolute;
+  	width:100%;
+  	min-height:100%;
+  	background: linear-gradient(0deg,rgba(0,50,150,0.3),rgba(0,150,255,0.8));
+  );
+}
+
+
+
+@keyframes leftBrowMove {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(-10deg);
+	}
+	100% {
+		transform: rotate(-20deg);
+	}
+}
+
+@keyframes rightBrowMove {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(10deg);
+	}
+	100% {
+		transform: rotate(20deg);
+	}
+}
+
+@keyframes leftEyeMove {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		left: 90px;
+	}
+	100% {
+		left: 100px;
+	}
+}
+
+@keyframes rightEyeMove {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		left: 420px;
+	}
+	100% {
+		left: 410px;
+	}
+}

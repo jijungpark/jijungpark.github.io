@@ -1,0 +1,94 @@
+body {
+	width: 80%;
+	margin: auto;
+}
+
+svg.features {
+	position: absolute;
+}
+
+svg#leftBrow {
+	left: 50px;
+	top: 100px;
+	animation: leftBrowMove 5s linear forwards;
+	filter: drop-shadow(10px 0px 10px white);
+}
+
+svg#rightBrow {
+	top: 100px;
+	left: 450px;
+	animation: rightBrowMove 5s linear forwards;
+	filter: drop-shadow(10px 0px 10px white);
+}
+
+svg#leftEye {
+	top: 220px;
+	left: 80px;
+	animation: leftEyeMove 5s linear forwards;
+	filter: drop-shadow(10px 0px 10px white);
+}
+
+svg#rightEye {
+	top: 220px;
+	left: 430px;
+	animation: rightEyeMove 5s linear forwards;
+	filter: drop-shadow(10px 0px 10px white);
+}
+
+canvas{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+@keyframes leftBrowMove {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(10deg);
+		top: 100px;
+	}
+	100% {
+		transform: rotate(20deg);
+		top: 100px;
+	}
+}
+
+@keyframes rightBrowMove {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(-10deg);
+		top: 100px;
+	}
+	100% {
+		transform: rotate(-20deg);
+		top: 100px;
+	}
+}
+
+@keyframes leftEyeMove {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(5deg);
+	}
+	100% {
+		transform: rotate(10deg);
+	}
+}
+
+@keyframes rightEyeMove {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(-10deg);
+	}
+	100% {
+		transform: rotate(-15deg);
+	}
+}

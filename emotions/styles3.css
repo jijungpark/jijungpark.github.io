@@ -1,0 +1,80 @@
+body {
+	width: 80%;
+	margin: auto;
+}
+
+svg.features {
+	position: absolute;
+}
+
+svg#leftBrow {
+	left: 50px;
+	top: 100px;
+	animation: leftBrowMove 2s linear forwards infinite;
+}
+
+svg#rightBrow {
+	top: 150px;
+	left: 800px;
+	animation: rightBrowMove 2s linear forwards infinite;
+}
+
+svg#leftEye {
+	top: 300px;
+	left: 400px;
+	animation: leftEyeMove 2s linear forwards infinite;
+}
+
+svg#rightEye {
+	top: 300px;
+	left: 800px;
+	animation: rightEyeMove 2s linear forwards infinite;
+	/*filter: drop-shadow(10px 0px 10px red);*/
+}
+
+
+@keyframes leftBrowMove {
+	0% {
+		transform: scale(0.6);
+		left: 450px;
+	}	
+	100% {
+		transform: scale(1.4) rotate(-5deg);	
+		left: 300px;	
+	}
+}
+
+@keyframes rightBrowMove {
+	0% {
+		transform: scale(0.6);
+		left: 770px;
+	}
+	100% {
+		transform: scale(1.4) rotate(5deg);	
+		left: 880px;	
+	}
+}
+
+@keyframes leftEyeMove {
+	0% {
+		transform: scale(0.6);
+		left: 450px;
+		top: 250px;
+	}
+	100% {
+		transform: scale(1.4);
+		left: 350px;
+	}
+}
+
+@keyframes rightEyeMove {
+	0% {
+		transform: scale(0.6);
+		left: 750px;
+		top: 250px;
+	}
+	100% {
+		transform: scale(1.4);
+		left: 850px;
+	}
+}
