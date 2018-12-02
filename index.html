@@ -61,6 +61,36 @@
       <section class="resume-section p-3 p-lg-5 d-flex d-column" id="projects">
         <div class="container">
           <h2 class="mb-5">Some of my works..</h2>
+
+          <div class="row">
+            <div class="col-md-7">
+              <a href="emotions/emotions.html">
+                <img class="img-fluid rounded mb-3 mb-md-0" src="images/emotions.jpg" alt="Exploring Emotions" id="emotions">
+              </a>
+            </div>
+            <div class="col-md-5">
+              <p class="subheading mb-3"><span class="text-primary">Exploring Emotions</span></p>
+              <p>An experimentation with shapes, lines, colors, and animation techniques to explore different emotions.</p>
+            </div>
+          </div>
+
+          <hr class="m-4">
+
+
+          <div class="row">
+            <div class="col-md-7">
+              <a href="ocean/index.html">
+                <img class="img-fluid rounded mb-3 mb-md-0" src="images/ocean.jpg" alt="Save the Ocean" id="ocean">
+              </a>
+            </div>
+            <div class="col-md-5">
+              <p class="subheading mb-3"><span class="text-primary">Save the Ocean</span></p>
+              <p>An interactive game in which users have to collect as much trash as possible within the time limit to save the polluted ocean.</p>
+            </div>
+          </div>
+
+          <hr class="m-4">
+
           <div class="row">
             <div class="col-md-7">
               <a href="agi/index.html">
@@ -77,29 +107,17 @@
 
           <div class="row">
             <div class="col-md-7">
-              <a href="emotions/emotions.html">
-                <img class="img-fluid rounded mb-3 mb-md-0" src="images/emotions.jpg" alt="Exploring Emotions" id="emotions">
+              <a href="#">
+                <img class="img-fluid rounded mb-5 mb-md-0" src="images/nyu.jpg" alt="Honors Research Project" id="research">
               </a>
             </div>
             <div class="col-md-5">
-              <p class="subheading mb-3"><span class="text-primary">Exploring Emotions</span></p>
-              <p>An experimentation with shapes, lines, colors, and animation techniques to explore different emotions.</p>
+              <p class="subheading mb-3"><span class="text-primary">Psychology Honors Thesis</span></p>
+              <p>An independent research project under the sponsorships of NYU Psychology Honors Program and NYU School of Medicine, investigating the relationship between weight and cognition among adolescents.</p>
             </div>
           </div>
 
-          <hr class="m-4">
-
-          <div class="row">
-            <div class="col-md-7">
-              <a href="ocean/index.html">
-                <img class="img-fluid rounded mb-3 mb-md-0" src="images/ocean.jpg" alt="Save the Ocean" id="ocean">
-              </a>
-            </div>
-            <div class="col-md-5">
-              <p class="subheading mb-3"><span class="text-primary">Save the Ocean</span></p>
-              <p>An interactive game in which users have to collect as much trash as possible within the time limit to save the polluted ocean.</p>
-            </div>
-          </div>
+        </div>
       </section>
 
       <hr class="m-5">  
@@ -234,6 +252,7 @@
       var i = document.querySelector("#I");
       var p = document.querySelector("#P");
       var r = document.querySelector("#R");
+      var research = document.querySelector("#research");
 
       agi.onmouseover = function() {
         agi.style.opacity = "0.3";
@@ -253,6 +272,13 @@
       ocean.onmouseout = function() {
         ocean.style.opacity = "1.0";
       }
+
+      research.onmouseover = function() {
+        research.style.opacity = "0.3";
+      }
+      research.onmouseout = function() {
+        research.style.opacity = "1.0";
+      } 
 
       profile.onmouseover = function() {
         profile.style.transform = "scale(1.2)";
@@ -289,7 +315,8 @@
       }
       r.onmouseout = function() {
         r.style.transform = "scale(1.0)";
-      }     
+      }    
+     
     </script>
 
     <!-- Bootstrap core JavaScript -->
