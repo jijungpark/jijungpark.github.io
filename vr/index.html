@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Ji Jung Park</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/resume.min.css" rel="stylesheet"> 
+
+  </head>
+
+  <body id="page-top">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">
+        <span class="d-block d-lg-none">Ji Jung Park</span>
+        <span class="d-none d-lg-block">
+          <img class="img-fluid img-profile rounded-circle mx-auto mb-3" src="../images/profile.jpg" alt="Profile Picture">
+        </span>
+      </a>      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="../index.html#home">Home</a>
+          </li>  
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="../index.html#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="../index.html#resume">Resume</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid p-0">
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column">      
+        <div class="my-auto">         
+          <h2 class="mb-0">Virtual Grocery Store</h2>
+          <h3 class="mb-5"><span class="text-primary">Creating an interactive shopping experience for users using Leap Motion controller</span></h3>
+
+          <h3 class="mb-0">Video Demonstration</h3>
+          <video class="mb-0" width="800" controls>
+            <source src="demo.mp4" type="video/mp4">
+          </video> 
+
+          <div class="subheading mb-5">Click <a href="project/index.html"><span class="text-primary">here</span></a> to explore the virtual grocery store!</span></div>        
+           
+          <h3 class="mb-0">Inspiration / Objective</h3>
+          <div class="mb-5">With the rise of virtual reality, many companies have begun to launch virtual reality shopping experience. For instance, Tesco introduced a virtual store in a South Korea subway station in 2011, where time-pressed commuters can shop by simply scanning the QR codes of the products on display with their smartphones. Similarly, I wanted to create a virtual grocery store that will allow the users to browse and purchase products more efficiently. By incorporating the Leap Motion controller into this project, I wanted to create an even more interactive shopping experience for the users.</div>
+
+          <h3 class="mb-0">Process</h3>
+          <div class="subheading mb-0">1. Structure</div>
+          <div class="mb-3">The first step was figuring out how to structure the virtual space. I wanted the structure to be simple yet effective so that the users can easily browse the items. I decided to structure the space by displaying five virtual shelves: four vertical shelves creating three aisles and one horizontal shelf at the back.</div>
+
+          <div class="subheading mb-0">2. Shopping Cart</div>
+          <div class="mb-3">I downloaded a 3D model of a shopping cart from Google Poly and scaled it to an appropriate size. Then I added the shopping cart to the camera view so that it follows wherever the user decides to move. In terms of the coding process, I first built an empty container, added the 3D model to the container and finally added the container to the user’s HUD cursor.</div>
+
+          <div class="subheading mb-0">3. 3D Models</div>
+          <div class="mb-3">A big part of this project was manipulating and experimenting with 3D models. Since the virtual shelves were huge, I decided to fill only the middle two and the back shelves. I wanted each shelf to have its own category just like how a real grocery store does. After choosing the three categories (food & vegetables, fast food, and drinks), I downloaded 3D models of food items from Google Poly, scaled them correspondingly, and displayed them on the shelves.</div>
+
+          <div class="subheading mb-0">4. Leap Motion controller</div>
+          <div class="mb-3">Next, I incorporated the Leap Motion controller into my virtual world so that the users will be able to navigate the space without keyboard or mouse. I allowed the users to use both of their hands to move around the space – left hand for moving forward, backward, left and right and the right hand for moving up and down. I displayed two colored boxes to represent both hands in the real world.</div> 
+
+          <div class="subheading mb-0">5. Collision Detection</div>
+          <div class="mb-3">I created a collision detection system so that whenever the user runs into the item, an event will be triggered to place the item into the shopping cart. To make the item disappear from the shelf and appear in the cart, I placed every item in the cart but set its visibility to false. When a collision is detected between the user and the item, the visibility of the item on the shelf will become false and the one in the shopping cart will become true.</div>
+
+          <div class="subheading mb-0">6. HTML Page</div>
+          <div class="mb-3">Whenever the user hits an item, its nutrition facts as well as the price will be displayed. I used a timeout function to let the page automatically disappear after a few seconds so that the user can go back to the virtual world instead of being stuck in the 2D HTML world.</div>
+
+          <div class="subheading mb-0">7. Check-out</div>The final step was creating a check-out page that will display a list of items the users would like to purchase. To check out, the user can simply collide into the vending machine which has a coin spinning on top. <div class="mb-5">
+          </div>    
+
+        </div> 
+                                  
+        <h3 class="mb-0">Challenges</h3>
+        <div class="mb-5">
+          Some of the main challenges I faced throughout the project include...
+          <ul>
+            <li>Working with 3D models.<br>First, many of them did not display their textures properly because the illumination values were wrong in their MTL files. Furthermore, the external OBJ file was tricky to work with when trying to scale it. For instance, the shopping cart that I added to the camera view looks really small because once I tried to rescale it to make it bigger, it completely disappeared from the camera view.</li>
+            <li>Figuring out the collision detection mechanism between user and food items. <br>Since the leap returns its own location coordinates and I used a function to map it into another dimension into the virtual world, it was challenging to calculate the distance between the relative coordinates of the virtual world and the absolute coordinates of the food items.</li>
+          </ul>
+        </div>
+
+        <h3 class="mb-0">Future Direction</h3>
+        <div class="mb-0">
+          <ul>
+            <li>For this project, I used two colored boxes to represent both hands in the real world - red box representing the left hand and green box represing the right hand. To further improve this project, it would be nice to use arrows or images of actual hands instead of the boxes to make the experience more seamless for the user.</li>
+            <li>Currently, I only have five items (pizza, burger, water, coke, and carrot) displayed in the shopping cart. Therefore, even if the user collects the other items, the items will not display in the cart. Eventually, displaying all the items into the cart will make this project more complete.</li>
+          </ul>
+        </div>       
+      </section>
+
+
+    </div> 
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="../js/resume.min.js"></script>
+
+  </body>
+
+</html>
+

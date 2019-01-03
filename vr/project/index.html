@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="UTF-8">
+
+		<!-- P5 libraries -->
+		<script language="javascript" type="text/javascript" src="../libraries/p5.js"></script>
+		<script language="javascript" type="text/javascript" src="p5.sound.js"></script>
+		<script language="javascript" type="text/javascript" src="../libraries/p5.dom.min.js"></script>
+
+		<!-- A-Frame libraries -->
+		<script language="javascript" type="text/javascript" src="../libraries/aframe.min.js"></script>
+
+		<!-- AFrameP5 library -->
+		<script language="javascript" type="text/javascript" src="../libraries/aframep5.js"></script>
+		<!-- Leap hand sensor -->
+    	<script language="javascript" type="text/javascript" src="../libraries/leap-0.6.4.js"></script>
+
+		<!-- P5 Sketch -->
+		<script language="javascript" type="text/javascript" src="sketch.js"></script>
+
+		<!-- custom styles -->
+		<style>
+			body {
+				padding: 0;
+				margin: 0;
+			}
+
+			.window1 {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				z-index: 100;
+				background-color: lightyellow;
+				display: none;
+
+			}
+
+			.calorie {
+				display: block;
+				margin: auto;
+			}
+			p,li{
+				text-align: center;
+				font-size: 2em;
+			}
+
+
+
+		</style>
+	</head>
+	<body>
+
+		<div class = "window1" id= "water">
+			<img class="calorie" src="images/water.jpg">
+			<p>Price: $ 2.99</p>
+		</div>
+
+		<div class="window1" id="coke">
+			<img class="calorie" src="images/coke.jpg">
+			<p>Price: $ 1.99</p>
+		</div>
+		<div class = "window1" id= "fries">
+			<img class="calorie" src="images/water.jpg">
+			<p>Price: $ x.xx</p>
+		</div>
+		<div class = "window1" id= "pizza">
+			<img class="calorie" src="images/water.jpg">
+			<p>Price: $ x.xx</p>
+		</div>
+		<div class = "window1" id= "burger">
+			<img class="calorie" src="images/water.jpg">
+			<p>Price: $ x.xx</p>
+		</div>
+		<div class = "window1" id= "hotdog">
+			<img class="calorie" src="images/water.jpg">
+			<p>Price: $ x.xx</p>
+		</div>
+		<div class = "window1" id= "donut">
+			<img class="calorie" src="images/water.jpg">
+			<p>Price: $ x.xx</p>
+		</div>
+		<div class = "window1" id= "taco">
+			<img class="calorie" src="images/water.jpg">
+			<p>Price: $ x.xx</p>
+		</div>
+		<div class = "window1" id= "waffle">
+			<img class="calorie" src="images/water.jpg">
+			<p>Price: $ x.xx</p>
+		</div>
+		<div class = "window1" id= "sushi">
+			<img class="calorie" src="images/water.jpg">
+			<p>Price: $ x.xx</p>
+		</div>
+		<div class = "window1" id= "banana">
+			<img class="calorie" src="images/water.jpg">
+			<p>Price: $ x.xx</p>
+		</div>
+		<div class = "window1" id= "apple">
+			<img class="calorie" src="images/water.jpg">
+			<p>Price: $ x.xx</p>
+		</div>
+		<div class = "window1" id= "strawberry">
+			<img class="calorie" src="images/water.jpg">
+			<p>Price: $ x.xx</p>
+		</div>
+		<div class = "window1" id= "grape">
+			<img class="calorie" src="images/water.jpg">
+			<p>Price: $ x.xx</p>
+		</div>
+		<div class = "window1" id= "kiwi">
+			<img class="calorie" src="images/water.jpg">
+			<p>Price: $ x.xx</p>
+		</div>
+		<div class = "window1" id= "carrot">
+			<img class="calorie" src="images/water.jpg">
+			<p>Price: $ x.xx</p>
+		</div>
+		<div class = "window1" id= "eggplant">
+			<img class="calorie" src="images/water.jpg">
+			<p>Price: $ x.xx</p>
+		</div>
+		<div class = "window1" id= "corn">
+			<img class="calorie" src="images/water.jpg">
+			<p>Price: $ x.xx</p>
+		</div>
+		<div class = "window1" id= "pepper">
+			<img class="calorie" src="images/water.jpg">
+			<p>Price: $ x.xx</p>
+		</div>
+		<div class = "window1" id= "tomato">
+			<img class="calorie" src="images/water.jpg">
+			<p>Price: $ x.xx</p>
+		</div>
+		<div class = "window1" id= "coffee">
+			<img class="calorie" src="images/water.jpg">
+			<p>Price: $ x.xx</p>
+		</div>
+		<div class = "window1" id= "wine">
+			<img class="calorie" src="images/water.jpg">
+			<p>Price: $ x.xx</p>
+		</div>
+		<div class = "window1" id= "cocktail">
+			<img class="calorie" src="images/water.jpg">
+			<p>Price: $ x.xx</p>
+		</div>
+
+		<div class="window1" id="checkout">
+			<p>Below is the list of items you want to buy: </p>
+
+			<script>
+				var cart = [""]
+			</script>
+		</div>
+
+		<!-- container to hold our VR scene - make sure to give this element an ID of 'VRScene' -->
+	    <a-scene id="VRScene">
+
+	    	<!--
+		       The 'a-assets' container is used to load in any external artwork you may want to use as "textures" for your objects.
+		       Ensure that this element has an ID of 'VRAssets'
+
+		       Textures can be loaded by creating a new 'a-asset' tag inside of the 'a-assets' container.
+		       When doing this you will need to make sure to give your textures a unique ID -
+		       this will be used by p5 to create new objects.
+
+		       Example:
+
+		       <img id="ITEM_ID_GOES_HERE" src="images/gold_block.png">
+			-->
+
+			<a-assets id="VRAssets">
+
+				<img src="images/floor.png" id="floor">
+				<img src="images/wall.png" id="wall">
+				<a-asset id="shelf_obj" src="images/shelf.obj"></a-asset>
+				<a-asset id="shelf_mtl" src="images/shelf.mtl"></a-asset>	
+				<a-asset id="cart_obj" src="images/cart.obj"></a-asset>
+				<a-asset id="cart_mtl" src="images/cart.mtl"></a-asset>	
+				<a-asset id="fries_obj" src="images/fries/french fries.obj"></a-asset>
+				<a-asset id="fries_mtl" src="images/fries/french fries.mtl"></a-asset>	
+				<a-asset id="pizza_obj" src="images/pizza/pizza.obj"></a-asset>
+				<a-asset id="pizza_mtl" src="images/pizza/pizza.mtl"></a-asset>
+				<a-asset id="burger_obj" src="images/burger/model.obj"></a-asset>
+				<a-asset id="burger_mtl" src="images/burger/materials.mtl"></a-asset>
+				<a-asset id="hotdog_obj" src="images/hotdog/model.obj"></a-asset>
+				<a-asset id="hotdog_mtl" src="images/hotdog/materials.mtl"></a-asset>
+
+				<a-asset id="donut_obj" src="images/donut/donut.obj"></a-asset>
+				<a-asset id="donut_mtl" src="images/donut/donut.mtl"></a-asset>					
+
+				<a-asset id="banana_obj" src="images/banana/CHAHIN_BANANA.obj"></a-asset>
+				<a-asset id="banana_mtl" src="images/banana/CHAHIN_BANANA.mtl"></a-asset>
+				<a-asset id="apple_obj" src="images/apple/Apple.obj"></a-asset>
+				<a-asset id="apple_mtl" src="images/apple/Apple.mtl"></a-asset>
+				<a-asset id="strawberry_obj" src="images/strawberry/Strawberry_01.obj"></a-asset>
+				<a-asset id="strawberry_mtl" src="images/strawberry/Strawberry_01.mtl"></a-asset>	
+				<a-asset id="grape_obj" src="images/grape/Grapes_01.obj"></a-asset>
+				<a-asset id="grape_mtl" src="images/grape/Grapes_01.mtl"></a-asset>	
+				<a-asset id="kiwi_obj" src="images/kiwi/Kiwi_226.obj"></a-asset>
+				<a-asset id="kiwi_mtl" src="images/kiwi/Kiwi_226.mtl"></a-asset>
+
+				<a-asset id="carrot_obj" src="images/carrot/carrot.obj"></a-asset>
+				<a-asset id="carrot_mtl" src="images/carrot/carrot.mtl"></a-asset>	
+				<a-asset id="eggplant_obj" src="images/eggplant/EggPlant_01.obj"></a-asset>
+				<a-asset id="eggplant_mtl" src="images/eggplant/EggPlant_01.mtl"></a-asset>			
+				<a-asset id="corn_obj" src="images/corn/EarOfCorn_220.obj"></a-asset>
+				<a-asset id="corn_mtl" src="images/corn/EarofCorn_220.mtl"></a-asset>
+				<a-asset id="pepper_obj" src="images/pepper/greenPepper.obj"></a-asset>
+				<a-asset id="pepper_mtl" src="images/pepper/greenPepper.mtl"></a-asset>	
+				<a-asset id="tomato_obj" src="images/tomato/Tomato_01.obj"></a-asset>
+				<a-asset id="tomato_mtl" src="images/tomato/Tomato_01.mtl"></a-asset>	
+
+				<a-asset id="taco_obj" src="images/taco/model.obj"></a-asset>
+				<a-asset id="taco_mtl" src="images/taco/materials.mtl"></a-asset>
+				<a-asset id="waffle_obj" src="images/waffle/waffle.obj"></a-asset>
+				<a-asset id="waffle_mtl" src="images/waffle/waffle.mtl"></a-asset>						
+				<a-asset id="sushi_obj" src="images/sushi/model.obj"></a-asset>
+				<a-asset id="sushi_mtl" src="images/sushi/materials.mtl"></a-asset>			
+
+				<a-asset id="coke_obj" src="images/coke/CHAHIN_BOTTLE_OF_SODA.obj"></a-asset>
+				<a-asset id="coke_mtl" src="images/coke/
+				CHAHIN_BOTTLE_OF_SODA.mtl"></a-asset>
+				<a-asset id="water_obj" src="images/water/model.obj"></a-asset>
+				<a-asset id="water_mtl" src="images/water/materials.mtl"></a-asset>
+
+				<a-asset id="wine_obj" src="images/wine/BootleOfWine_248.obj"></a-asset>
+				<a-asset id="wine_mtl" src="images/wine/BootleOfWine_248.mtl"></a-asset>	
+				<a-asset id="cocktail_obj" src="images/cocktail/cocktail.obj"></a-asset>
+				<a-asset id="cocktail_mtl" src="images/cocktail/cocktail.mtl"></a-asset>													<a-asset id="beer_obj" src="images/beer/Beer.obj"></a-asset>
+				<a-asset id="beer_mtl" src="images/beer/Beer.mtl"></a-asset>				
+				<a-asset id="coffee_obj" src="images/coffee/coffee cup.obj"></a-asset>
+				<a-asset id="coffee_mtl" src="images/coffee/coffee cup.mtl"></a-asset>	
+				
+				<a-asset id="machine_obj" src="images/machine/model.obj"></a-asset>
+				<a-asset id="machine_mtl" src="images/machine/materials.mtl"></a-asset>	
+
+				<a-asset id="coin_obj" src="images/coin/CHAHIN_COIN.obj"></a-asset>
+				<a-asset id="coin_mtl" src="images/coin/CHAHIN_COIN.mtl"></a-asset>	
+
+			</a-assets>
+
+			<!-- define the sky for this scene -->
+			<a-sky id="theSky" src="#wall" color="rgb(255,255,255)"></a-sky>
+
+
+
+	    </a-scene>
+
+
+
+	</body>
+</html>
